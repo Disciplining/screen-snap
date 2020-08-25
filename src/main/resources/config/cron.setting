@@ -1,0 +1,2 @@
+com.lyx.ScreenSnap.snap = */8 * * * * ?
+com.lyx.ScreenSnap.sendEmailAndDelFile = */1 * * * *
