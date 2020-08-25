@@ -1,5 +1,6 @@
 package com.lyx;
 
+import cn.hutool.core.date.DatePattern;
 import cn.hutool.core.date.DateUtil;
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ZipUtil;
@@ -9,6 +10,7 @@ import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.text.DateFormat;
 
 public class ScreenSnap
 {
@@ -41,7 +43,7 @@ public class ScreenSnap
 
 		try
 		{
-			String picPath = PIC_IDR_PATH + DateUtil.now() + ".jpg";
+			String picPath = PIC_IDR_PATH + DateUtil.format(DateUtil.date(), DatePattern.PURE_DATETIME_PATTERN) + ".jpg";
 
 			Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 			BufferedImage screenshot = (new Robot()).createScreenCapture(new Rectangle(0, 0, (int) d.getWidth(), (int) d.getHeight()));
